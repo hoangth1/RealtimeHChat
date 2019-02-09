@@ -8,7 +8,7 @@ import io.reactivex.disposables.Disposable
 import java.net.SocketTimeoutException
 import java.net.UnknownHostException
 
-class BaseViewModel : ViewModel() {
+abstract class BaseViewModel : ViewModel() {
     val isLoading = MutableLiveData<Boolean>()
     val errorMessage = MutableLiveData<String>()
     val compositeDisposable = CompositeDisposable()

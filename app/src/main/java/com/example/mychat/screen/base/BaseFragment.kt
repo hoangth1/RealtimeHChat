@@ -15,8 +15,10 @@ abstract class BaseFragment<ViewModel:BaseViewModel,ViewBinding:ViewDataBinding>
     lateinit var viewBinding:ViewBinding
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
-        return super.onCreateView(inflater, container, savedInstanceState)
-        viewBinding=DataBindingUtil.inflate(inflater,layotuRes,container,false)
+        viewBinding=DataBindingUtil.inflate<ViewBinding>(inflater,
+            layotuRes,container,false).apply {
+            root.isClickable=true
+        }
         initComponent()
         return viewBinding.root
     }
