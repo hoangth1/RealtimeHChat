@@ -1,0 +1,55 @@
+{
+  "project_info": {
+    "project_number": "92416159474",
+    "firebase_url": "https://realtimehchat.firebaseio.com",
+    "project_id": "realtimehchat",
+    "storage_bucket": "realtimehchat.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:92416159474:android:b644fbe578b49976",
+        "android_client_info": {
+          "package_name": "com.example.mychat"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "92416159474-nrpuo2k5qkcnktu00af045k5srumeb9r.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.mychat",
+            "certificate_hash": "cab6cc7a3f9f3293d79a8467eac5d338aca5cff4"
+          }
+        },
+        {
+          "client_id": "92416159474-6u56euvf2euaiodilletmgsb8vo6nt71.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyArlLdX3VV5rTYdNvtsmJAdBsx_UtR2_ag"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "92416159474-6u56euvf2euaiodilletmgsb8vo6nt71.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
