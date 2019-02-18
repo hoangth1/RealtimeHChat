@@ -4,6 +4,7 @@ import com.example.mychat.BR
 import com.example.mychat.R
 import com.example.mychat.databinding.FragmentMainBinding
 import com.example.mychat.screen.base.BaseFragment
+import com.example.mychat.screen.start.StartFragment
 import org.koin.android.viewmodel.ext.android.viewModel
 
 class MainFragment:BaseFragment<MainViewModel,FragmentMainBinding>() {
@@ -18,5 +19,11 @@ class MainFragment:BaseFragment<MainViewModel,FragmentMainBinding>() {
     override val viewModelVariable: Int=BR.viewModel
 
     override fun initComponent() {
+        addChildFragment(
+            container = R.id.fragment_container,
+            fragment = StartFragment.newInstance(),
+            tag = StartFragment.TAG,isAddBackstack = false
+        )
+
     }
 }

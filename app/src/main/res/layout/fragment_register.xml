@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:bind="http://schemas.android.com/tools">
+
+    <data>
+
+
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/colorWhite">
+
+        <include
+            bind:haveBackButton="@{true}"
+            android:id="@+id/layout_toolbar"
+            layout="@layout/layout_toolbar"
+            bind:title="@{@string/register}"/>
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/text_description"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/dp_10"
+            android:text="@string/create_new_account"
+            android:textColor="@color/colorBlack"
+            android:textSize="@dimen/sp_25"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/layout_toolbar" />
+
+        <androidx.appcompat.widget.AppCompatEditText
+            android:id="@+id/edit_username"
+            android:layout_width="0dp"
+            android:layout_height="@dimen/dp_60"
+            android:layout_marginStart="@dimen/dp_10"
+            android:layout_marginTop="@dimen/dp_50"
+            android:layout_marginEnd="@dimen/dp_10"
+            android:hint="@string/username"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/text_description" />
+
+        <androidx.appcompat.widget.AppCompatEditText
+            android:id="@+id/edit_email"
+            android:layout_width="@dimen/dp_0"
+            android:layout_height="@dimen/dp_60"
+            android:layout_marginTop="@dimen/dp_20"
+            android:hint="@string/email"
+            app:layout_constraintEnd_toEndOf="@id/edit_username"
+            app:layout_constraintStart_toStartOf="@id/edit_username"
+            app:layout_constraintTop_toBottomOf="@id/edit_username" />
+
+        <androidx.appcompat.widget.AppCompatEditText
+            android:id="@+id/edit_password"
+            android:layout_width="0dp"
+            android:layout_height="@dimen/dp_60"
+            android:layout_marginTop="@dimen/dp_20"
+            android:hint="@string/password"
+            app:layout_constraintEnd_toEndOf="@id/edit_email"
+            app:layout_constraintStart_toStartOf="@id/edit_email"
+            app:layout_constraintTop_toBottomOf="@id/edit_email" />
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/button_register"
+            android:layout_width="0dp"
+            android:layout_height="@dimen/dp_70"
+            android:layout_marginTop="@dimen/dp_30"
+            android:background="@color/colorPrimary"
+            android:text="@string/register"
+            android:textColor="@color/colorWhite"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="@id/edit_password"
+            app:layout_constraintStart_toStartOf="@id/edit_password"
+            app:layout_constraintTop_toBottomOf="@id/edit_password" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>
