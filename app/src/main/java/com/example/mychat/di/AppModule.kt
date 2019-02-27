@@ -11,5 +11,7 @@ val appModule= module {
 }
 val modules= listOf(
     appModule,
-    viewModelModule
+    viewModelModule,
+    repositoryModule,
+    firebaseModule
 )

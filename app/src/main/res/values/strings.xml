@@ -6,4 +6,7 @@
     <string name="password">Password</string>
     <string name="register">Register</string>
     <string name="login">Login</string>
+    <string name="ok">OK</string>
+    <string name="email_invalid">Email invalid</string>
+    <string name="password_invalid">Password invalid</string>
 </resources>
