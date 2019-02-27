@@ -17,17 +17,16 @@ abstract class BaseFragment<ViewModel : BaseViewModel, ViewBinding : ViewDataBin
     abstract val viewModel: ViewModel
     abstract val viewModelVariable: Int
     lateinit var viewBinding: ViewBinding
-    private var loadingAlertDilog: AlertDialog? = null
+    private var loadingAlertDialog: AlertDialog? = null
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
-        loadingAlertDilog = DialogUtils.createLoadingDialog(context, false, false)
+        loadingAlertDialog = DialogUtils.createLoadingDialog(context, false, false)
         viewBinding = DataBindingUtil.inflate<ViewBinding>(
             inflater,
             layotuRes, container, false
         ).apply {
             root.isClickable = true
         }
-
         return viewBinding.root
     }
 
@@ -35,9 +34,9 @@ abstract class BaseFragment<ViewModel : BaseViewModel, ViewBinding : ViewDataBin
         super.onViewCreated(view, savedInstanceState)
         viewModel.apply {
             isLoading.observe(viewLifecycleOwner, Observer {
-                if (it){
+                if (it) {
                     showLoading()
-                }else{
+                } else {
                     hideLoading()
                 }
             })
@@ -121,10 +120,10 @@ abstract class BaseFragment<ViewModel : BaseViewModel, ViewBinding : ViewDataBin
     }
 
     fun showLoading() {
-        loadingAlertDilog?.show()
+        loadingAlertDialog?.show()
     }
 
     fun hideLoading() {
-        loadingAlertDilog?.cancel()
+        loadingAlertDialog?.cancel()
     }
 }
