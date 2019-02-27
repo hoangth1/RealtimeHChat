@@ -5,6 +5,7 @@ import androidx.lifecycle.ViewModel
 import com.example.mychat.data.remote.BaseException
 import io.reactivex.disposables.CompositeDisposable
 import io.reactivex.disposables.Disposable
+import java.lang.Exception
 import java.net.SocketTimeoutException
 import java.net.UnknownHostException
 
@@ -17,20 +18,20 @@ abstract class BaseViewModel : ViewModel() {
         compositeDisposable.add(disposable)
     }
 
-    fun onLoadFail(throwable: Throwable) {
-        when (throwable) {
+    fun onLoadFail(exception: Exception) {
+        when (exception) {
             is BaseException -> {
-                when (throwable.cause) {
+                when (exception.cause) {
                     is UnknownHostException ->
                         errorMessage.value = "No Internet Connection"
                     is SocketTimeoutException ->
                         errorMessage.value = "Connect timeout, please retry"
                     else ->
-                        errorMessage.value = throwable.message
+                        errorMessage.value = exception.message
                 }
 
             }
-            else -> errorMessage.value = throwable.message
+            else -> errorMessage.value = exception.message
         }
         isLoading.value = false
 
