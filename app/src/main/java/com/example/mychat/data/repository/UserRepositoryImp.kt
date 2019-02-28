@@ -19,7 +19,9 @@ class UserRepositoryImp(
         return firebaseAuth.createUserWithEmailAndPassword(email, password)
     }
 
-    override fun login(email: String, password: String) {
+    override fun login(email: String, password: String):Task<AuthResult> {
+        return firebaseAuth.signInWithEmailAndPassword(email,password)
+
     }
 
     override fun getCurrentUser():FirebaseUser? {
